@@ -1,4 +1,4 @@
-﻿@model Webtonic.Models.FileModel
+@model Webtonic.Models.FileModel
 
 @{
     ViewData["Title"] = "UploadData";
@@ -15,9 +15,8 @@
         </div>
         <br />
         <div role="group">
-            <input type="submit" class="btn btn-info w-25 mx-1" value="Add File" /> <input type="submit" class="btn btn-primary w-25 mx-1" value="Back" />
+            <input type="submit" class="btn btn-info w-25 mx-1" value="Add File" /> <a asp-action="Index" class="btn btn-primary w-25 mx-1">Back</a>
 
         </div>
     </div>
 </form>
-
