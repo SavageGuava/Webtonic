@@ -1,0 +1,23 @@
+﻿@model Webtonic.Models.FileModel
+
+@{
+    ViewData["Title"] = "UploadData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="UploadDataPost">
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Upload File</h2>
+        </div>
+        <div>
+            <input type="file" /><br />
+        </div>
+        <br />
+        <div role="group">
+            <input type="submit" class="btn btn-info w-25 mx-1" value="Add File" /> <input type="submit" class="btn btn-primary w-25 mx-1" value="Back" />
+
+        </div>
+    </div>
+</form>
+

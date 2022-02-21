@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Webtonic.Models.StudentModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<partial name="_Notification" />
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Student List</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Student" asp-action="AddNewStudent" class="btn btn-primary">Add New Student</a>
+
+            <a asp-controller="Student" asp-action="UploadData" class="btn btn-primary">Add New File</a>
+        </div>
+    </div>
+    <br />
+
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Student Number
+                    </th>
+                    <th>
+                        Firstname
+                    </th>
+                    <th>
+                        Surname
+                    </th>
+                    <th>
+                        Course Code
+                    </th>
+                    <th>
+                        Course Description
+                    </th>
+                    <th>
+                        Grade
+                    </th>
+                    <th>
+                        Changes
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model)
+                {
+                    <tr>
+                        <td width="20%">@student.StudentNumber</td>
+                        <td width="20%">@student.Firstname</td>
+                        <td width="20%">@student.Surname</td>
+                        <td width="20%">@student.CourseCode</td>
+                        <td width="20%">@student.CourseDescription</td>
+                        <td width="20%">@student.Grade</td>
+                        <td width="20%">
+                            <div class="w-100 btn-group" role="group">
+                                <a asp-controller="Student" asp-action="UpdateStudentGET" asp-route-StudentID="@student.StudentID" class="btn btn-primary mx-1">Update</a>
+                                <a asp-controller="Student" asp-action="DeleteStudentGET" asp-route-StudentID="@student.StudentID" class="btn btn-danger mx-1">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    }
+    else
+    {
+        <p>No students yet</p>
+    }
+
+</div>
+

@@ -1,0 +1,75 @@
+﻿@model Webtonic.Models.StudentModel
+
+@{
+    ViewData["Title"] = "DeleteStudentGET";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="DeleteStudentPOST">
+    <input asp-for="StudentID" hidden />
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Delete Student</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="StudentNumber"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Firstname"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Surname"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <input asp-for="StudentNumber" disabled class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="Firstname" disabled class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="Surname" disabled class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="CourseCode"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="CourseDescription"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Grade"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <input asp-for="CourseCode" disabled class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="CourseDescription" disabled class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="Grade" disabled class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-danger w-75" value="Delete Student" onclick="return confirm('Are you sure you want to delete this student information?')" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-info w-75">Back</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
